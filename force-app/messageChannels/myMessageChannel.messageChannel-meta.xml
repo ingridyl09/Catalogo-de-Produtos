@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>MyMessageChannel</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Message Channel to pass Count updates</description>
+</LightningMessageChannel>

@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Carrinho de Compras" icon-name="utility:cart">
+        <hr>
+        <template if:true={hasItems}>
+            <ul class="custom-list">
+                <template for:each={cartItems} for:item="item">
+                    <li key={item.name} class="slds-m-around_small">
+                        <lightning-card>
+                            <div class="custom-box slds-m-around_medium">
+                                <div class="item-image">
+                                    <img src={item.imageUrl} alt="Carrinho Vazio" class="item-value-image" />
+                                </div>
+                                <div class="item-info">
+                                    <p style="font-size: medium;">{item.name}</p>
+                                    <p><strong>Valor unitário: {item.preco} R$</strong></p>
+                                    <p><strong>Qtde: {item.quantidadeSelecionada}</strong></p>
+                                    <div class="slds-float_right">
+                                        <lightning-button variant="destructive" icon-name="utility:delete" onclick={handleRemoveItem} data-name={item.name}></lightning-button>
+                                    </div>
+                            </div>
+                            </div>
+                        </lightning-card>
+                        <hr>
+                    </li>
+                </template>
+            </ul>
+            <div class="total-price-container slds-box slds-theme_shade">
+                <p><strong>Total: {totalPriceCart} R$</strong></p>
+                <lightning-button label="Finalizar Compra" variant="success" onclick={handleFinalizarCompra}></lightning-button>
+            </div>
+        </template>
+        <template if:false={hasItems}>
+            <div class="empty-cart-container">
+                <img src="https://www.modelosbar.com.br/Content/projeto/img/cesta-vazia.png" alt="Carrinho Vazio" class="empty-cart-image" />
+            </div>
+        </template>
+    </lightning-card>
+</template>

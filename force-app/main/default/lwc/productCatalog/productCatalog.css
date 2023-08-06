@@ -1,0 +1,14 @@
+.custom-box {
+    background-color: #c1e0ff;
+    height: 400px;
+    padding: 1rem; 
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.custom-box-name{
+    background-color: hsl(210, 77%, 68%); 
+    padding: 1rem; 
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 550px;
+}

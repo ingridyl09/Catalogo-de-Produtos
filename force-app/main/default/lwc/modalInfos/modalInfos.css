@@ -1,0 +1,20 @@
+.product-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.product-details {
+    text-align: left;
+    background-color: #ffffff;
+}
+
+.product-details p {
+    margin: 8px 0;
+}
+
+.product-details strong {
+    font-weight: bold;
+}

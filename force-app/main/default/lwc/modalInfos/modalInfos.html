@@ -1,0 +1,17 @@
+<template>
+    <lightning-modal-header label="Detalhes"></lightning-modal-header>
+    <lightning-modal-body>
+        <div class="product-details">
+            <img src={content.imageUrl} alt={content.imageUrl} class="product-image" />
+            <p><strong>Nome:</strong> {content.name}</p>
+            <p><strong>Valor:</strong> {content.preco} R$</p>
+            <p><strong>Descrição:</strong> {content.description}</p>
+        </div>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <div class="slds-grid slds-grid_align-end">
+            <lightning-button label="Fechar" onclick={handleOkay}></lightning-button>
+            <lightning-button icon-name="utility:cart" onclick={handleAddToCart}></lightning-button>
+            </div>
+    </lightning-modal-footer>
+</template>

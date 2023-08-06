@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Catálogo de Produtos" icon-name="standard:account">
+        <hr>
+        <ul class="slds-grid slds-wrap slds-grid_pull-padded">
+            <template for:each={products} for:item="product">
+                <li key={product.id} class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+                    <lightning-card>
+                        <div class="slds-p-around_small">
+                            <div class="custom-box-name slds-m-around_medium">
+                                <p class="slds-text-heading_medium"><strong>{product.Name}</strong></p>
+                                <div class="custom-box slds-m-around_medium">
+                                    <p class="slds-text-heading_small">{product.Description}</p>
+                                </div>
+                                    <lightning-button icon-name="action:preview" onclick={handleOpenProduct} 
+                                        data-product-name={product.Name} 
+                                        data-product-description={product.Description}
+                                        data-product-preco={product.Preco__c} 
+                                        data-product-image-url={product.Imagem__c}
+                                        data-product-id={product.Id}
+                                        data-product-qtde={product.QuantidadeEmEstoque__c}>
+                                    </lightning-button>
+                            </div>
+                        </div>
+                    </lightning-card>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>
