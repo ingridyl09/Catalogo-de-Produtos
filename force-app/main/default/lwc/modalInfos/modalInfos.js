@@ -14,11 +14,10 @@ export default class ModalInfos extends LightningModal {
     }
 
     handleAddToCart() {
-
         const message = {
             data: this.content
         };
-        
+
         publish(
             this.messageContext, 
             MY_MESSAGE_CHANNEL, 

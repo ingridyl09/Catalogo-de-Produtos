@@ -3,7 +3,7 @@ import { subscribe, MessageContext } from 'lightning/messageService';
 import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/myMessageChannel__c';
 import LightningAlert from 'lightning/alert';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import abateQuantidadeItem from '@salesforce/apex/MyController.abateQuantidadeItem';
+import decrementQtdItem from '@salesforce/apex/DecrementQtdItemController.decrementQtdItem';
 
 export default class CartItem extends LightningElement {
     subscription = null;
@@ -20,8 +20,6 @@ export default class CartItem extends LightningElement {
             MY_MESSAGE_CHANNEL,
             (message) => this.handleCart(message)
         );
-
-        console.log('se inscreveu ');
     }
 
     connectedCallback() {
@@ -37,14 +35,14 @@ export default class CartItem extends LightningElement {
                 imageUrl: message.data.imageUrl,
                 preco: parseFloat(message.data.preco),
                 productQtde: message.data.productQtde,
-                quantidadeSelecionada: 1,
+                qtdeSelect: 1,
                 totalPrice: parseFloat(message.data.preco)
             };
 
             const existingItemIndex = this.cartItems.findIndex(item => item.name === newItem.name);
             if (existingItemIndex !== -1) {
-                if (this.cartItems[existingItemIndex].quantidadeSelecionada + 1 <= newItem.productQtde) {
-                    this.cartItems[existingItemIndex].quantidadeSelecionada += 1;
+                if (this.cartItems[existingItemIndex].qtdeSelect + 1 <= newItem.productQtde) {
+                    this.cartItems[existingItemIndex].qtdeSelect += 1;
                     this.cartItems[existingItemIndex].totalPrice += newItem.preco;
                 }
                 else{
@@ -77,12 +75,12 @@ export default class CartItem extends LightningElement {
 		});
 	}
 
-    handleFinalizarCompra() {
-        const itemsToAbate = this.cartItems.map(item => {
-            return { itemName: item.name, quantidadeSelecionada: item.quantidadeSelecionada };
+    handleCheckout() {
+        const decrementStock = this.cartItems.map(item => {
+            return { itemName: item.name, qtdeSelect: item.qtdeSelect };
         });
 
-        abateQuantidadeItem({ itemDataList: itemsToAbate })
+        decrementQtdItem({ itemDataList: decrementStock })
             .then(() => {
                 const event = new ShowToastEvent({
                     title: 'Sucesso!',
@@ -97,7 +95,7 @@ export default class CartItem extends LightningElement {
             })
             .catch(error => {
                 const event = new ShowToastEvent({
-                    title: 'Erro',
+                    title: 'Erro',ShowToastEvent,
                     message: 'Ocorreu um erro ao finalizar a compra: ' + error.message,
                     variant: 'error'
                 });

@@ -13,7 +13,7 @@
                                 <div class="item-info">
                                     <p style="font-size: medium;">{item.name}</p>
                                     <p><strong>Valor unitário: {item.preco} R$</strong></p>
-                                    <p><strong>Qtde: {item.quantidadeSelecionada}</strong></p>
+                                    <p><strong>Qtde: {item.qtdeSelect}</strong></p>
                                     <div class="slds-float_right">
                                         <lightning-button variant="destructive" icon-name="utility:delete" onclick={handleRemoveItem} data-name={item.name}></lightning-button>
                                     </div>
@@ -26,7 +26,7 @@
             </ul>
             <div class="total-price-container slds-box slds-theme_shade">
                 <p><strong>Total: {totalPriceCart} R$</strong></p>
-                <lightning-button label="Finalizar Compra" variant="success" onclick={handleFinalizarCompra}></lightning-button>
+                <lightning-button label="Finalizar Compra" variant="success" onclick={handleCheckout}></lightning-button>
             </div>
         </template>
         <template if:false={hasItems}>

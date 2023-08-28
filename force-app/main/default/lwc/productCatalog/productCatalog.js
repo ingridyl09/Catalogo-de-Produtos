@@ -13,7 +13,7 @@ export default class ProductCatalog extends LightningElement {
             console.error('Error retrieving products:', error);
         }
     }
-
+    
     handleOpenProduct(event) {
         const productName = event.target.dataset.productName;
         const productDescription = event.target.dataset.productDescription;

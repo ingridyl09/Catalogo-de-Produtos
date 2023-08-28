@@ -1,7 +1,7 @@
-public with sharing class MyController {
+public with sharing class DecrementQtdItemController {
     // Método público para abater a quantidade dos itens
     @AuraEnabled
-    public static void abateQuantidadeItem(List<ItemData> itemDataList) {
+    public static void decrementQtdItem(List<ItemData> itemDataList) {
         try {
             if (itemDataList != null && !itemDataList.isEmpty()) {
                 List<Product2> itemsToUpdate = new List<Product2>();
@@ -10,8 +10,8 @@ public with sharing class MyController {
                     Product2 item = [SELECT Id, QuantidadeEmEstoque__c FROM Product2 WHERE Name = :itemData.itemName];
 
                     if (item != null) {
-                        if (itemData.quantidadeSelecionada <= item.QuantidadeEmEstoque__c) {
-                            item.QuantidadeEmEstoque__c -= itemData.quantidadeSelecionada;
+                        if (itemData.qtdeSelect <= item.QuantidadeEmEstoque__c) {
+                            item.QuantidadeEmEstoque__c -= itemData.qtdeSelect;
                             itemsToUpdate.add(item);
                         } else {
                             throw new AuraHandledException('Quantidade selecionada maior que a quantidade em estoque para o item ' + itemData.itemName);
@@ -31,6 +31,6 @@ public with sharing class MyController {
         @AuraEnabled
         public String itemName { get; set; }
         @AuraEnabled
-        public Integer quantidadeSelecionada { get; set; }
+        public Integer qtdeSelect { get; set; }
     }
 }
