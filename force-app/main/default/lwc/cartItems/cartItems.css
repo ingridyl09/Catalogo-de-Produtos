@@ -8,7 +8,7 @@
 }
 
 .empty-cart-image {
-    max-width: 300px;
+    max-width: 500px;
 }
 
 .custom-box {
@@ -18,7 +18,7 @@
 
 .item-info {
     flex: 1;
-    max-width: 50;
+    max-width: 600;
 }
 
 .item-image {
@@ -26,8 +26,8 @@
 }
 
 .item-value-image{
-    max-width: 100px;
-    margin: 10px;
+    max-width: 125px;
+    margin: 2px;
 }
 
 .infos-item {
@@ -48,7 +48,7 @@
     font-size: 1.2rem;
 }
 
-
-
-
-
+.custom-gray-background {
+    background-color: #dbd4d4;
+    border: 1px solid #938d8d;
+}

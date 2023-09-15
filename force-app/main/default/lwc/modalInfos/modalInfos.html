@@ -10,8 +10,10 @@
     </lightning-modal-body>
     <lightning-modal-footer>
         <div class="slds-grid slds-grid_align-end">
-            <lightning-button label="Fechar" onclick={handleOkay}></lightning-button>
-            <lightning-button icon-name="utility:cart" onclick={handleAddToCart}></lightning-button>
+            <span class="slds-m-right_small">
+                <lightning-button label="Fechar" variant="Destructive" onclick={handleOkay}></lightning-button>
+            </span>
+            <lightning-button label="Adicionar" variant="Brand" icon-name="utility:cart" onclick={handleAddToCart}></lightning-button>
             </div>
     </lightning-modal-footer>
 </template>

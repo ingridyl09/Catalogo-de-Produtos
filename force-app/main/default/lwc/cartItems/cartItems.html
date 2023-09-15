@@ -1,5 +1,5 @@
 <template>
-    <lightning-card title="Carrinho de Compras" icon-name="utility:cart">
+    <lightning-card title="Carrinho de Compras" icon-name="standard:webcart">
         <hr>
         <template if:true={hasItems}>
             <ul class="custom-list">
@@ -10,12 +10,14 @@
                                 <div class="item-image">
                                     <img src={item.imageUrl} alt="Carrinho Vazio" class="item-value-image" />
                                 </div>
-                                <div class="item-info">
-                                    <p style="font-size: medium;">{item.name}</p>
-                                    <p><strong>Valor unitário: {item.preco} R$</strong></p>
-                                    <p><strong>Qtde: {item.qtdeSelect}</strong></p>
-                                    <div class="slds-float_right">
-                                        <lightning-button variant="destructive" icon-name="utility:delete" onclick={handleRemoveItem} data-name={item.name}></lightning-button>
+                                <div class="item-info" style="font-size: medium">
+                                    <p>{item.name}</p>
+                                    <p><strong>R$ {item.preco}</strong></p>
+                                    <div class="slds-grid slds-grid_align-end">
+                                        <span class="slds-box slds-box_xx-small slds-m-right_small custom-gray-background">
+                                            Qtde: {item.qtdeSelect}
+                                        </span>
+                                        <lightning-button label="Excluir" variant="destructive" icon-name="utility:delete" onclick={handleRemoveItem} data-name={item.name}></lightning-button>
                                     </div>
                             </div>
                             </div>
@@ -25,8 +27,8 @@
                 </template>
             </ul>
             <div class="total-price-container slds-box slds-theme_shade">
-                <p><strong>Total: {totalPriceCart} R$</strong></p>
-                <lightning-button label="Finalizar Compra" variant="success" onclick={handleCheckout}></lightning-button>
+                <p><strong>Total: R$ {totalPriceCart}</strong></p>
+                <lightning-button label="Finalizar Compra" variant="Brand" onclick={handleCheckout}></lightning-button>
             </div>
         </template>
         <template if:false={hasItems}>
