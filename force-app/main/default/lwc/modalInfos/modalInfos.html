@@ -1,19 +1,18 @@
 <template>
-    <lightning-modal-header label="Detalhes"></lightning-modal-header>
+    <lightning-modal-header label="Detalhes" class="modal-header"></lightning-modal-header>
     <lightning-modal-body>
         <div class="product-details">
-            <img src={content.imageUrl} alt={content.imageUrl} class="product-image" />
-            <p><strong>Nome:</strong> {content.name}</p>
-            <p><strong>Valor:</strong> {content.preco} R$</p>
-            <p><strong>Descrição:</strong> {content.description}</p>
+            <p class="product-name"><strong>Nome:</strong> {content.name}</p>
+            <p class="product-price"><strong>Valor:</strong> {content.preco} R$</p>
+            <p class="product-description"><strong>Descrição:</strong> {content.description}</p>
         </div>
     </lightning-modal-body>
     <lightning-modal-footer>
         <div class="slds-grid slds-grid_align-end">
             <span class="slds-m-right_small">
-                <lightning-button label="Fechar" variant="Destructive" onclick={handleOkay}></lightning-button>
+                <lightning-button label="Fechar" variant="destructive" onclick={handleOkay}></lightning-button>
             </span>
-            <lightning-button label="Adicionar" variant="Brand" icon-name="utility:cart" onclick={handleAddToCart}></lightning-button>
-            </div>
+            <lightning-button label="Adicionar ao Carrinho" variant="brand" icon-name="utility:cart" onclick={handleAddToCart}></lightning-button>
+        </div>
     </lightning-modal-footer>
 </template>

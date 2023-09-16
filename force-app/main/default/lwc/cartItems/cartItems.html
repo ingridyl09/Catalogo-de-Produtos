@@ -7,9 +7,9 @@
                     <li key={item.name} class="slds-m-around_small">
                         <lightning-card>
                             <div class="custom-box slds-m-around_medium">
-                                <div class="item-image">
+                                 <div class="item-image">
                                     <img src={item.imageUrl} alt="Carrinho Vazio" class="item-value-image" />
-                                </div>
+                                    </div>
                                 <div class="item-info" style="font-size: medium">
                                     <p>{item.name}</p>
                                     <p><strong>R$ {item.preco}</strong></p>
@@ -26,10 +26,14 @@
                     </li>
                 </template>
             </ul>
-            <div class="total-price-container slds-box slds-theme_shade">
-                <p><strong>Total: R$ {totalPriceCart}</strong></p>
+        <div class="total-price-container slds-box slds-theme_shade">
+            <div class="slds-grid slds-grid_align-end">
+                <span class="slds-m-right_small">
+                    <p><strong>Total: R$ {totalPriceCart}</strong></p>
+                </span>
                 <lightning-button label="Finalizar Compra" variant="Brand" onclick={handleCheckout}></lightning-button>
             </div>
+        </div>
         </template>
         <template if:false={hasItems}>
             <div class="empty-cart-container">

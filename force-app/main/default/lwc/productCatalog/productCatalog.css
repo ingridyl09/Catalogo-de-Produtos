@@ -1,14 +1,20 @@
 .custom-box {
-    background-color: #c1e0ff;
-    height: 400px;
-    padding: 1rem; 
-    border-radius: 5px;
+    background-color: #f3f6f9;
+    padding: 1rem;
+    border-radius: 10px; /* Reduzi o raio do border-radius para 10px para parecer mais moderno */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Coluna para empilhar os elementos verticalmente em telas menores */
+    align-items: center; /* Centralizar elementos horizontalmente */
+    text-align: center; /* Centralizar o texto dentro da caixa */
 }
-.custom-box-name{
-    background-color: hsl(210, 77%, 68%); 
-    padding: 1rem; 
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 550px;
+
+.product-image {
+    max-width: 100%; /* A imagem ocupará 100% da largura da caixa pai */
+    height: auto;
+    margin: 5px auto; /* Margens automáticas para centralizar a imagem verticalmente */
+}
+
+.lightning-button {
+    margin-top: 10px; /* Espaço entre a imagem e o botão */
 }

@@ -1,20 +1,35 @@
-.product-image {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.modal-header {
+    color: #000000;
+    font-weight: bold;
 }
 
 .product-details {
     text-align: left;
     background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .product-details p {
-    margin: 8px 0;
+    margin: 10px 0;
 }
 
 .product-details strong {
     font-weight: bold;
+}
+
+.product-name {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.product-price {
+    color: #0070d2;
+    font-size: 1.2rem;
+}
+
+.product-description {
+    color: #666;
+    font-size: 1rem;
 }
