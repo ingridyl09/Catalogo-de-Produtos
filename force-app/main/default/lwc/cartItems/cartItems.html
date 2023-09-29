@@ -12,7 +12,7 @@
                                     </div>
                                 <div class="item-info" style="font-size: medium">
                                     <p>{item.name}</p>
-                                    <p><strong>R$ {item.preco}</strong></p>
+                                    <p class="product-price"><strong>R$ {item.preco}</strong></p>
                                     <div class="slds-grid slds-grid_align-end">
                                         <span class="slds-box slds-box_xx-small slds-m-right_small custom-gray-background">
                                             Qtde: {item.qtdeSelect}
@@ -29,7 +29,7 @@
         <div class="total-price-container slds-box slds-theme_shade">
             <div class="slds-grid slds-grid_align-end">
                 <span class="slds-m-right_small">
-                    <p><strong>Total: R$ {totalPriceCart}</strong></p>
+                    <p class="product-price"><strong>Total: R$ {totalPriceCart}</strong></p>
                 </span>
                 <lightning-button label="Finalizar Compra" variant="Brand" onclick={handleCheckout}></lightning-button>
             </div>

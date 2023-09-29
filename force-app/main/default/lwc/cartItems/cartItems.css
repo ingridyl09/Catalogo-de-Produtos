@@ -49,6 +49,11 @@
     max-width: 100%;
 }
 
+.product-price {
+    color: #0070d2;
+    font-size: 1.2rem;
+}
+
 .custom-gray-background {
     background-color: #dbd4d4;
     border: 1px solid #938d8d;
